@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brian Hoang Ngoc Huy — Engineering Leader & AI Builder</title>
+<meta name="description" content="Engineering leader & AI builder. Grew from engineer to Head of Engineering at a web3 gaming startup; scaled to 1M MAU and built a production LLM/agentic system.">
+<style>
+  :root {
+    --ink: #14161f;
+    --muted: #5a5f70;
+    --accent: #2563a8;
+    --accent-soft: #eaf1f9;
+    --line: #e3e7ee;
+    --bg: #ffffff;
+    --bg-alt: #f6f8fb;
+    --max: 880px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--ink); background: var(--bg); line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  header.nav {
+    position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.85);
+    backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid var(--line);
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .nav .brand { font-weight: 700; font-size: 16px; letter-spacing: -0.2px; }
+  .nav nav a { color: var(--muted); font-size: 14px; margin-left: 22px; font-weight: 500; }
+  .nav nav a:hover { color: var(--accent); text-decoration: none; }
+  .nav .cta { background: var(--accent); color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 13px; }
+  .nav .cta:hover { text-decoration: none; opacity: 0.92; }
+  @media (max-width: 640px){ .nav nav a:not(.cta){ display:none; } }
+
+  /* Hero */
+  .hero { padding: 70px 0 40px; }
+  .eyebrow { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: 0.4px; }
+  .hero h1 { font-size: clamp(34px, 6vw, 52px); line-height: 1.05; letter-spacing: -1.2px; margin: 10px 0 6px; }
+  .hero .tag { font-size: clamp(17px, 3vw, 21px); color: var(--ink); font-weight: 600; }
+  .hero p.lead { color: var(--muted); font-size: 17px; max-width: 640px; margin: 18px 0 26px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 16px; border-radius: 9px; font-size: 14px; font-weight: 600; border: 1px solid var(--line); color: var(--ink); }
+  .btn:hover { text-decoration: none; border-color: var(--accent); color: var(--accent); }
+  .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .btn.primary:hover { color: #fff; opacity: 0.92; }
+
+  /* Metrics */
+  .metrics { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 30px 0; }
+  .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; text-align: center; }
+  .metric .n { font-size: clamp(22px, 4vw, 30px); font-weight: 800; color: var(--accent); letter-spacing: -0.5px; }
+  .metric .l { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  @media (max-width: 640px){ .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; } }
+
+  /* Sections */
+  section.block { padding: 48px 0; }
+  h2.sec { font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 700; margin-bottom: 22px; }
+  p.about { font-size: 17px; color: #2c3140; max-width: 680px; }
+  p.about strong { color: var(--ink); }
+
+  /* Experience */
+  .job { padding: 18px 0; border-top: 1px solid var(--line); }
+  .job:first-of-type { border-top: none; }
+  .job-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px; }
+  .job-role { font-weight: 700; font-size: 16px; }
+  .job-meta { color: var(--muted); font-size: 14px; }
+  .job-co { color: var(--accent); font-weight: 600; font-size: 14px; margin-top: 1px; }
+  .job ul { margin: 10px 0 0 18px; color: #2c3140; font-size: 14.5px; }
+  .job ul li { margin-bottom: 5px; }
+
+  /* Skills */
+  .skillgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; }
+  @media (max-width: 640px){ .skillgrid { grid-template-columns: 1fr; } }
+  .skillrow { font-size: 14.5px; }
+  .skillrow .k { font-weight: 700; }
+  .skillrow .v { color: var(--muted); }
+
+  /* Highlight card */
+  .feature { background: var(--accent-soft); border: 1px solid #d6e3f2; border-radius: 14px; padding: 24px 26px; }
+  .feature h3 { font-size: 18px; margin-bottom: 8px; }
+  .feature p { color: #2c3140; font-size: 15px; }
+  .feature .row { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 14px; }
+  .feature .row b { color: var(--accent); }
+
+  /* Footer */
+  footer { background: var(--ink); color: #c9cedb; padding: 40px 0; }
+  footer h3 { color: #fff; font-size: 20px; margin-bottom: 6px; }
+  footer a { color: #9ec3ee; }
+  footer .links { margin-top: 16px; }
+  footer .btn { border-color: #333a4d; color: #dfe4ee; }
+  footer .btn:hover { border-color: #9ec3ee; color: #fff; }
+  .copyright { font-size: 12.5px; margin-top: 24px; color: #7a8094; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <span class="brand">Brian Hoang Ngoc Huy</span>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">Experience</a>
+      <a href="#skills">Skills</a>
+      <a class="cta" href="BrianHoang-CV.pdf">Download CV</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="eyebrow">Engineering Leader · AI Builder</div>
+    <h1>Brian Hoang Ngoc Huy</h1>
+    <div class="tag">From engineer to Head of Engineering — and the person who built the AI that ran alongside the team.</div>
+    <p class="lead">16+ years building and shipping software. I grew from individual contributor to
+      Head of Engineering at a venture-backed startup, scaled a live web3 game to <strong>1M peak MAU</strong>,
+      and built a <strong>production LLM/agentic system</strong> the whole team relied on. Hands-on
+      player-coach — I set technical direction and still write the hard code. Currently open to
+      engineering leadership or senior IC roles (remote-global or Hanoi-based).</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:Huyhn310@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/brian-hoang-ngoc-huy/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="BrianHoang-CV.pdf">Download CV (PDF)</a>
+    </div>
+  </section>
+</div>
+
+<div class="metrics">
+  <div class="wrap metrics-grid">
+    <div class="metric"><div class="n">1M</div><div class="l">peak monthly users</div></div>
+    <div class="metric"><div class="n">$1.5M+</div><div class="l">lifetime revenue</div></div>
+    <div class="metric"><div class="n">80%</div><div class="l">faster bug resolution (AI agent)</div></div>
+    <div class="metric"><div class="n">1→11</div><div class="l">engineering team built</div></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section class="block" id="about">
+    <h2 class="sec">About</h2>
+    <p class="about">Engineering leader with 16+ years across two eras — enterprise rigor (.NET, regulated
+    systems) and modern startup speed (Node.js, cloud, web3). Over ~5 years at DayOne/Uncharted I grew from
+    principal engineer to <strong>Head of Engineering</strong>, leading the team through a full pivot from
+    F&amp;B SaaS to web3 gaming. I build teams, architecture, and products from zero — and I stay hands-on,
+    including building a production AI engineering agent that gave a lean team outsized leverage.</p>
+  </section>
+
+  <section class="block" id="ai" style="padding-top:0;">
+    <h2 class="sec">What I'm known for</h2>
+    <div class="feature">
+      <h3>A production AI coworker for my engineering team</h3>
+      <p>I built an LLM-powered agentic system — Python, RAG over our codebase &amp; incident history,
+      Claude/GPT APIs, wired into Slack — that triages tickets, investigates bugs to root cause, opens fix
+      PRs, and reviews code. It became a platform the team built on top of.</p>
+      <div class="row">
+        <span><b>~80%</b> faster bug resolution</span>
+        <span><b>~95%</b> faster investigation</span>
+        <span><b>Whole team</b> adopted it daily</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="work" style="padding-top:0;">
+    <h2 class="sec">Experience</h2>
+
+    <div class="job">
+      <div class="job-top"><span class="job-role">Head of Engineering</span><span class="job-meta">Jun 2021 – 2026</span></div>
+      <div class="job-co">DayOne → Uncharted · Singapore / Remote</div>
+      <ul>
+        <li>Grew engineering from <strong>1 to 11</strong> (4 FTE + 7 contractors) across 3 teams; owned hiring, architecture, and delivery.</li>
+        <li>Scaled the live-game backend (Node.js, MongoDB, cloud, on-chain) to <strong>1M peak MAU / 50K DAU / ~10K CCU</strong> at ~99% uptime.</li>
+        <li>Shipped 3 games + a creator platform 0→1; drove <strong>$1.5M+</strong> lifetime revenue. Launched the company's first iOS &amp; Android apps.</li>
+        <li>Cut infra cost <strong>60%</strong> ($12K→$5K/mo) and weekly downtime ~4h→&lt;1h on an inherited backend.</li>
+        <li>Built a production <strong>LLM/agentic system</strong> (Python, RAG, Claude/GPT) adopted team-wide — ~80% faster bug resolution.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top"><span class="job-role">Technical Consultant / Team Lead</span><span class="job-meta">Jul 2017 – May 2021</span></div>
+      <div class="job-co">FPT Asia Pacific · Singapore</div>
+      <ul>
+        <li>Led delivery teams building enterprise .NET / SharePoint applications; owned solution design, architecture, and standards.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top"><span class="job-role">Earlier</span><span class="job-meta">2009 – 2017</span></div>
+      <div class="job-co">PETRONAS ICT (Malaysia) · Ciber · FPT Software</div>
+      <ul>
+        <li>Software engineer / team lead roles across .NET MVC, SharePoint, SQL — requirements, architecture, and code review.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="skills" style="padding-top:0;">
+    <h2 class="sec">Skills</h2>
+    <div class="skillgrid">
+      <div class="skillrow"><span class="k">Leadership:</span> <span class="v">Eng management, hiring &amp; team building, technical strategy, architecture (player-coach).</span></div>
+      <div class="skillrow"><span class="k">AI / Agentic:</span> <span class="v">LLM orchestration, agentic workflows, RAG / vector DBs, prompt engineering, Claude/GPT APIs.</span></div>
+      <div class="skillrow"><span class="k">Backend:</span> <span class="v">Node.js, TypeScript, Python, REST APIs, system design.</span></div>
+      <div class="skillrow"><span class="k">Data:</span> <span class="v">MongoDB, SQL Server, vector databases, performance optimization.</span></div>
+      <div class="skillrow"><span class="k">Cloud &amp; Infra:</span> <span class="v">AWS, Docker, cost optimization, reliability/uptime, CI/CD.</span></div>
+      <div class="skillrow"><span class="k">Web3:</span> <span class="v">Blockchain/NFT integration, on-chain event processing, game economy.</span></div>
+    </div>
+  </section>
+
+</div>
+
+<footer id="contact">
+  <div class="wrap">
+    <h3>Let's talk</h3>
+    <p>Open to engineering leadership or senior IC roles — remote-global or Hanoi-based, startup preferred.</p>
+    <div class="links">
+      <a class="btn" href="mailto:Huyhn310@gmail.com">Huyhn310@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/brian-hoang-ngoc-huy/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="BrianHoang-CV.pdf">CV (PDF)</a>
+    </div>
+    <div class="copyright">© 2026 Brian Hoang Ngoc Huy · Hanoi, Vietnam</div>
+  </div>
+</footer>
+
+</body>
+</html>
